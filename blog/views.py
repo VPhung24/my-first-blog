@@ -5,7 +5,8 @@ from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponsePermanentRedirect
 from django.core.urlresolvers import reverse
-from . inport templates
+from . import templates
+
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'templates/blog/post_list.html', {'posts': posts})
