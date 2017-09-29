@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    return render(request, 'blog/post_list.html', {'post': post})
 
 # Create your views here.
 def post_detail(request, pk):
